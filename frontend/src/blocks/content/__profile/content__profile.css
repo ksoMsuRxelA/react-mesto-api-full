@@ -1,0 +1,5 @@
+@media screen and (max-width: 320px) {
+  .content__profile {
+    margin: 42px auto 0 auto;
+  }
+}
