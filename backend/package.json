@@ -1,0 +1,35 @@
+{
+  "name": "mesto-backend",
+  "version": "1.0.0",
+  "description": "Backend of the project Mesto.",
+  "main": "app.js",
+  "scripts": {
+    "lint": "npx eslint .",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "mern"
+  ],
+  "author": "Ruslan Moskvitin <ra.moskvitin@yandex.ru>",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "express-winston": "^4.2.0",
+    "nodemon": "^2.0.15",
+    "winston": "^3.3.3"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "celebrate": "^15.0.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.13",
+    "validator": "^13.7.0"
+  }
+}
