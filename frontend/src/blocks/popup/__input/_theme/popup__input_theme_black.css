@@ -1,0 +1,6 @@
+.popup__input_theme_black {
+  background-color: #000;
+  border-bottom: 2px rgba(204, 204, 204, 1) solid;
+  outline: none;
+  color: #fff;
+}
