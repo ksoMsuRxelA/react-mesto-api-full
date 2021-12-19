@@ -1,0 +1,17 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "no-console": "off",
+    "no-underscore-dangle": ["error", { "allow": ["_id"]}],
+    "no-unused-vars": [2, { "args": "none" }],
+    "arrow-body-style": "off",
+    "max-len": "off",
+    "max-classes-per-file": "off",
+    "consistent-return": "off",
+    "no-undef-init": "off",
+    "no-useless-escape": "off"
+  }
+  // консоль нужна для разработки. max-len выключил потому что пишу длинные сообщения ошибок и комментарии
+  // классы ошибок пока что расположил в одном файле, они пока еще "маленькие". Вот как вырастут, тогда
+  // каждому классу создам свой файл.
+}

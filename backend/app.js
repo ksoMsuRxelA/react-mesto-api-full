@@ -1,15 +1,15 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 const { celebrate, Joi, errors } = require('celebrate');
+const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const users = require('./routes/users');
 const cards = require('./routes/cards');
 const { createUser, login } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const NotFoundError = require('./utils/NotFoundError');
-const cors = require('cors');
 
 const { PORT = 3000 } = process.env;
 
@@ -42,17 +42,17 @@ app.use(express.json());
 app.use(requestLogger);
 
 app.use(cors({
-  'origin': "*",
-  'methods': "GET,HEAD,PUT,PATCH,POST,DELETE",
-  'preflightContinue': false,
-  'optionsSuccessStatus': 204
+  origin: '*',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
 }));
 
 app.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
   }, 0);
-}); 
+});
 
 app.post('/signup', celebrate(joiObjectSignUp), createUser);
 app.post('/signin', celebrate(joiObjectSignIn), login);

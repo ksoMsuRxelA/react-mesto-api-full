@@ -80,7 +80,7 @@ const updateUserData = async (req, res, next) => {
 const updateUserAvatar = async (req, res, next) => {
   try {
     const { avatar } = req.body;
-    const userById = await User.findOneAndUpdate({_id: req.user._id}, { avatar }, { new: true, runValidators: true });
+    const userById = await User.findOneAndUpdate({ _id: req.user._id }, { avatar }, { new: true, runValidators: true });
     if (userById) {
       return res.status(200).send({ data: userById });
     }
@@ -114,13 +114,13 @@ const login = async (req, res, next) => {
       NODE_ENV === 'production' ? JWT_SECRET : 'some-very-secret-code',
       { expiresIn: '7d' },
     );
-    
-    return res.status(200).send({ 
-      token: token,
+
+    return res.status(200).send({
+      token,
       name: user.name,
       about: user.about,
       avatar: user.avatar,
-      email: user.email
+      email: user.email,
     });
   } catch (err) {
     next(err);
