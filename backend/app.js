@@ -42,11 +42,10 @@ app.use(express.json());
 app.use(requestLogger);
 
 app.use(cors({
-  origin: [
-    'http://xmesto.nomoredomains.rocks',
-    'https://xmesto.nomoredomains.rocks/',
-    'http://localhost:3000'
-  ]
+  'origin': "*",
+  'methods': "GET,HEAD,PUT,PATCH,POST,DELETE",
+  'preflightContinue': false,
+  'optionsSuccessStatus': 204
 }));
 
 app.get('/crash-test', () => {
