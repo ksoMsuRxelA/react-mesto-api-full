@@ -1,0 +1,27 @@
+.content {
+  width: calc(100% - 200px * 2);
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .content {
+    width: calc(100% - 2 * (100% * (1 / 2) - 440px));
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .content {
+    width: calc(100% - 2 * (100% * (53 / 510) - 34.812px));
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 767px) {
+  .content {
+    width: calc(100% - 2 * (100% * (25 / 446) + 1.507px));
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .content {
+    width: calc(100% - 19px * 2);
+  }
+}
